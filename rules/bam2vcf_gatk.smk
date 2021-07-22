@@ -19,6 +19,7 @@ rule bam2gvcf:
         #!The -Xmx value the tool is run with should be less than the total amount of physical memory available by at least a few GB
         # subtract that memory here
         mem_mb = lambda wildcards, attempt: attempt * res_config['bam2gvcf']['mem'],   # this is the overall memory requested
+        time = lambda wildcards, attempt: attempt * res_config['bam2gvcf']['time'],
         reduced = lambda wildcards, attempt: attempt * (res_config['bam2gvcf']['mem'] - 3000)  # this is the maximum amount given to java
     params:
         minPrun = config['minP'],
