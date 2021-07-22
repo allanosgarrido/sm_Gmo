@@ -41,7 +41,8 @@ create_intervals:
 
 # gatk HaplotypeCaller
 bam2gvcf: 
-    mem: 30000
+    mem: 1000
+    time: 30
 # gatk GenomicsDBImport
 gvcf2DB:
     mem: 30000
