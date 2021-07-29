@@ -20,7 +20,7 @@ rule bam2gvcf:
         # subtract that memory here
         mem_mb = lambda wildcards, attempt: attempt * res_config['bam2gvcf']['mem'],   # this is the overall memory requested
         time = lambda wildcards, attempt: attempt * res_config['bam2gvcf']['time'],
-        reduced = lambda wildcards, attempt: attempt * (res_config['bam2gvcf']['mem'] - 3000)  # this is the maximum amount given to java
+        reduced = lambda wildcards, attempt: attempt * (res_config['bam2gvcf']['mem'] - 500)  # this is the maximum amount given to java
     params:
         minPrun = config['minP'],
         minDang = config['minD']
